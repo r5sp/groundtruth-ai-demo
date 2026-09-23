@@ -60,6 +60,16 @@ const TOOLS = [
     path: "/evals",
   },
   {
+    id: "voice-qualifier",
+    name: "Voice Lead Qualifier",
+    description:
+      "An outbound voice agent that calls opted-in leads and qualifies them by talking to them, intent, timeline, budget, financing, area, then scores each lead in real time. Press the mic and talk to it.",
+    icon: "☎",
+    role: "Leasing",
+    status: "live",
+    path: "/voice-qualifier",
+  },
+  {
     id: "lease-agent",
     name: "Lease Abstraction",
     description: "Extract key terms from commercial leases, flag risks, and export structured data.",
@@ -165,7 +175,7 @@ const ROLES = ["All", "Leasing", "Operations", "Finance", "Legal"];
 // story end to end. The others render as roadmap cards so the platform still reads
 // as broad without exposing screens that need the live backend.
 const DEMO = import.meta.env.VITE_DEMO === "1";
-const DEMO_LIVE = new Set(["evals", "lease-agent", "invoice-agent"]);
+const DEMO_LIVE = new Set(["evals", "voice-qualifier", "lease-agent", "invoice-agent"]);
 
 export default function Hub({ user, onLogout, onSelectTool }) {
   const [roleFilter, setRoleFilter] = useState("All");

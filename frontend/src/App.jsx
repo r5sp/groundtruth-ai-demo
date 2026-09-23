@@ -20,6 +20,7 @@ const MorningBrief = lazy(() => import("./components/MorningBrief"));
 const CompetitiveHiring = lazy(() => import("./components/CompetitiveHiring"));
 const AdminPanel = lazy(() => import("./components/AdminPanel"));
 const EvalsDashboard = lazy(() => import("./components/EvalsDashboard"));
+const VoiceQualifier = lazy(() => import("./components/VoiceQualifier"));
 
 export default function App() {
   const { user, loading, logout } = useAuth();
@@ -158,6 +159,11 @@ export default function App() {
         onBack={() => setActiveTool(null)}
       />
     );
+  }
+
+  // Voice Lead Qualifier (Web Speech demo)
+  if (activeTool === "voice-qualifier") {
+    return <VoiceQualifier user={user} onLogout={logout} onBack={() => setActiveTool(null)} />;
   }
 
   // Evals & Verification (the trust layer)
